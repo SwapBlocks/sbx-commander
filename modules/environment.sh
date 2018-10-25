@@ -3,17 +3,17 @@
 setup_environment_file ()
 {
     if [[ ! -e "${CORE_DATA}/.env" ]]; then
-        mkdir "${HOME}/.ark"
+        mkdir "${HOME}/.sbx"
         local envFile="${CORE_DATA}/.env"
         touch "$envFile"
 
-        echo "ARK_LOG_LEVEL=debug" >> "$envFile" 2>&1
+        echo "ARK_LOG_LEVEL=info" >> "$envFile" 2>&1
 
         echo "ARK_DB_HOST=localhost" >> "$envFile" 2>&1
         echo "ARK_DB_PORT=5432" >> "$envFile" 2>&1
-        echo "ARK_DB_USERNAME=ark" >> "$envFile" 2>&1
+        echo "ARK_DB_USERNAME=sbx" >> "$envFile" 2>&1
         echo "ARK_DB_PASSWORD=password" >> "$envFile" 2>&1
-        echo "ARK_DB_DATABASE=ark_devnet" >> "$envFile" 2>&1
+        echo "ARK_DB_DATABASE=sbx_testnet" >> "$envFile" 2>&1
     fi
 
     . "${CORE_DATA}/.env"
@@ -34,14 +34,14 @@ setup_environment ()
         # create ~/.commander
         touch "$commander_config"
 
-        echo "CORE_REPO=https://github.com/ArkEcosystem/core" >> "$commander_config" 2>&1
-        echo "CORE_DIR=${HOME}/ark-core" >> "$commander_config" 2>&1
-        echo "CORE_DATA=${HOME}/.ark" >> "$commander_config" 2>&1
-        echo "CORE_CONFIG=${HOME}/.ark/config" >> "$commander_config" 2>&1
-        echo "CORE_TOKEN=ark" >> "$commander_config" 2>&1
-        echo "CORE_NETWORK=devnet" >> "$commander_config" 2>&1
-        echo "EXPLORER_REPO=https://github.com/ArkEcosystem/explorer" >> "$commander_config" 2>&1
-        echo "EXPLORER_DIR=${HOME}/ark-explorer" >> "$commander_config" 2>&1
+        echo "CORE_REPO=https://github.com/SwapBlocks/core" >> "$commander_config" 2>&1
+        echo "CORE_DIR=${HOME}/sbx-core" >> "$commander_config" 2>&1
+        echo "CORE_DATA=${HOME}/.sbx" >> "$commander_config" 2>&1
+        echo "CORE_CONFIG=${HOME}/.sbx/config" >> "$commander_config" 2>&1
+        echo "CORE_TOKEN=sbx" >> "$commander_config" 2>&1
+        echo "CORE_NETWORK=testnet" >> "$commander_config" 2>&1
+        echo "EXPLORER_REPO=https://github.com/SwapBlocks/explorer" >> "$commander_config" 2>&1
+        echo "EXPLORER_DIR=${HOME}/sbx-explorer" >> "$commander_config" 2>&1
 
         . "$commander_config"
 
