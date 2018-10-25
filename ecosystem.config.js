@@ -11,8 +11,8 @@ const parseArg = (key) => {
 
 module.exports = {
   apps : [{
-    name: 'ark-core-relay',
-    script: `${process.env.CORE_DIR}/packages/core/bin/ark`,
+    name: 'sbx-core-relay',
+    script: `${process.env.CORE_DIR}/packages/core/bin/sbx`,
     args: `relay --data ${process.env.CORE_DATA}
                  --config ${process.env.CORE_CONFIG}
                  --token ${process.env.CORE_TOKEN}
@@ -20,8 +20,8 @@ module.exports = {
     max_restarts: 5,
     min_uptime: '5m'
   }, {
-    name: 'ark-core-forger',
-    script: `${process.env.CORE_DIR}/packages/core/bin/ark`,
+    name: 'sbx-core-forger',
+    script: `${process.env.CORE_DIR}/packages/core/bin/sbx`,
     args: `forger --data ${process.env.CORE_DATA}
                   --config ${process.env.CORE_CONFIG}
                   --token ${process.env.CORE_TOKEN}
@@ -31,9 +31,9 @@ module.exports = {
     max_restarts: 5,
     min_uptime: '5m'
   }, {
-    name: 'ark-explorer',
+    name: 'sbx-explorer',
     script: `${process.env.EXPLORER_DIR}/express-server.js`,
-    args: `--name ark-explorer`,
+    args: `--name sbx-explorer`,
     max_restarts: 5,
     min_uptime: '5m',
     env: {
