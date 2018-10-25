@@ -13,8 +13,8 @@ bash commander.sh
 ## Development
 
 ```sh
-git clone https://github.com/SwapBlocks/core-commander -b develop
-cd core-commander/.dev/{operating_system}
+git clone https://github.com/SwapBlocks/sbx-commander -b develop
+cd sbx-commander/.dev/{operating_system}
 vagrant up
 vagrant ssh
 cd /vagrant
