@@ -4,7 +4,7 @@ explorer_install ()
 {
     ascii
 
-    heading "Installing ARK Explorer..."
+    heading "Installing SBX Explorer..."
 
     sudo mkdir "$EXPLORER_DIR" >> "$commander_log" 2>&1
     sudo chown "$USER":"$USER" "$EXPLORER_DIR" >> "$commander_log" 2>&1
@@ -36,7 +36,7 @@ explorer_install ()
         return
     fi
 
-    success "Installed ARK Explorer!"
+    success "Installed SBX Explorer!"
 }
 
 explorer_uninstall ()
@@ -45,11 +45,11 @@ explorer_uninstall ()
 
     explorer_stop
 
-    heading "Uninstalling ARK Explorer..."
+    heading "Uninstalling SBX Explorer..."
 
     sudo rm -rf "$EXPLORER_DIR"
 
-    success "Uninstalled ARK Explorer!"
+    success "Uninstalled SBX Explorer!"
 }
 
 explorer_update ()
@@ -67,11 +67,11 @@ explorer_update ()
     if [[ "$remote_version" == "$local_version" ]]; then
         STATUS_EXPLORER_UPDATE="No"
 
-        info "You already have the latest ARK Explorer version that we support."
+        info "You already have the latest SBX Explorer version that we support."
     else
         STATUS_EXPLORER_UPDATE="Yes"
 
-        read -p "An update is available for ARK Explorer, do you want to install it? [Y/n] : " choice
+        read -p "An update is available for SBX Explorer, do you want to install it? [Y/n] : " choice
 
         if [[ -z "$choice" || "$choice" =~ ^(yes|y|Y) ]]; then
             explorer_stop
@@ -94,7 +94,7 @@ explorer_start ()
 
     heading "Starting Explorer..."
 
-    pm2 start $commander_ecosystem --only ark-explorer >> "$commander_log" 2>&1
+    pm2 start $commander_ecosystem --only sbx-explorer >> "$commander_log" 2>&1
 
     success "Started Explorer!"
 }
@@ -105,7 +105,7 @@ explorer_restart ()
 
     heading "Restarting Explorer..."
 
-    pm2 restart $commander_ecosystem --only ark-explorer >> "$commander_log" 2>&1
+    pm2 restart $commander_ecosystem --only sbx-explorer >> "$commander_log" 2>&1
 
     success "Restarted Explorer!"
 }
@@ -116,7 +116,7 @@ explorer_stop ()
 
     heading "Stopping Explorer..."
 
-    pm2 stop $commander_ecosystem --only ark-explorer >> "$commander_log" 2>&1
+    pm2 stop $commander_ecosystem --only sbx-explorer >> "$commander_log" 2>&1
 
     success "Stopped Explorer!"
 }
@@ -127,12 +127,12 @@ explorer_logs ()
     echo -e "\n$(text_yellow " Use Ctrl+C to return to menu")\n"
     trap : INT
 
-    pm2 logs ark-explorer
+    pm2 logs sbx-explorer
 }
 
 explorer_status ()
 {
-    local status=$(pm2status "ark-explorer" | awk '{print $13}')
+    local status=$(pm2status "sbx-explorer" | awk '{print $13}')
 
     if [[ "$status" == "online" ]]; then
         STATUS_EXPLORER="On"

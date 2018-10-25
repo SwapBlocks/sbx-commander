@@ -1,24 +1,20 @@
-# ARK Core Commander
+# SBX Core Commander
 
-<p align="center">
-    <img src="https://github.com/ArkEcosystem/core-commander/blob/master/banner.png" />
-</p>
-
-> A shell script to easily setup, configure and maintain [ARK Core](https://github.com/ArkEcosystem/core).
+> A shell script to easily setup, configure and maintain [SBX Core](https://github.com/SwapBlocks/core).
 
 ## Installation
 
 ```bash
-git clone https://github.com/ArkEcosystem/core-commander
-cd core-commander
+git clone https://github.com/SwapBlocks/sbx-commander
+cd sbx-commander
 bash commander.sh
 ```
 
 ## Development
 
 ```sh
-git clone https://github.com/ArkEcosystem/core-commander -b develop
-cd core-commander/.dev/{operating_system}
+git clone https://github.com/SwapBlocks/sbx-commander -b develop
+cd sbx-commander/.dev/{operating_system}
 vagrant up
 vagrant ssh
 cd /vagrant
