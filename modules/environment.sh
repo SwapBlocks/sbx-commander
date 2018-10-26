@@ -34,7 +34,7 @@ setup_environment ()
         # create ~/.commander
         touch "$commander_config"
 
-        echo "CORE_REPO=https://github.com/SwapBlocks/core" >> "$commander_config" 2>&1
+        echo "CORE_REPO=https://github.com/SwapBlocks/sbx-core" >> "$commander_config" 2>&1
         echo "CORE_DIR=${HOME}/sbx-core" >> "$commander_config" 2>&1
         echo "CORE_DATA=${HOME}/.sbx" >> "$commander_config" 2>&1
         echo "CORE_CONFIG=${HOME}/.sbx/config" >> "$commander_config" 2>&1
