@@ -13,7 +13,7 @@ setup_environment_file ()
         echo "ARK_DB_PORT=5432" >> "$envFile" 2>&1
         echo "ARK_DB_USERNAME=${USER}" >> "$envFile" 2>&1
         echo "ARK_DB_PASSWORD=password" >> "$envFile" 2>&1
-        echo "ARK_DB_DATABASE=sbx_testnet" >> "$envFile" 2>&1
+        echo "ARK_DB_DATABASE=sbx_mainnet" >> "$envFile" 2>&1
     fi
 
     . "${CORE_DATA}/.env"
